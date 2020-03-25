@@ -1,0 +1,32 @@
+<p>gallery works!</p>
+
+<!-- interpolation -->
+<div>{{htmlStr}}</div>
+<div [innerHTML]="htmlStr"></div>
+
+<!-- property binding -->
+<input type="submit" [value]="data" [disabled]='data'>first name
+<input type="submit"  [disabled]='data2'>first name2
+<!---property binding and interpolation is same but difference is only that interpolation works in string but not in case of boolean and but property binding it work all boolean, strings-->
+
+<!--Attribute binding-->
+<table style="border:1px solid black;">
+  <tr>
+    <td [attr.colspan]='colNumber' style="border:1px solid black;">name</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid black;">2</td>
+    <td style="border:1px solid black;">4</td>
+  </tr>
+</table>
+
+<!--Event binding-->
+<input type="text" name="firstname" [value]="firstnameValue"/>
+<input type="submit" (click)="save()"/>
+
+<!--two way binding-->
+<h5>Two way Binding</h5>
+<input type="text" name="message" [(ngModel)]="message" />
+<button >{{message}}</button>
+
+
