@@ -76,4 +76,12 @@ export class ApiServiceService {
       })
     }
   }
+  checkLogin(email:string,password:string){
+    if(email=="admin@gmail.com" && password=="admin123"){
+      localStorage.setItem("email",email)
+      return true;
+    }else{
+      return false;
+    }
+  }
 }

@@ -12,7 +12,6 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { GalleryComponent } from '../../gallery/gallery.component';
-// import { LoginComponent } from '../../login/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { LogoutComponent } from '../../logout/logout.component';
 import { MatButtonModule } from '@angular/material/button';

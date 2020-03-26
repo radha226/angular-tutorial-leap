@@ -74,7 +74,7 @@ export class DashboardComponent implements OnInit {
     if(this.cookieValue){
 
     }else{
-      this.router.navigate(['login']);
+      //this.router.navigate(['login']);
     }
     console.log(this.cookieValue);
     // if(!this.cookie.get('Testd')){

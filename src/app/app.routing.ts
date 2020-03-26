@@ -5,58 +5,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes =[
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
-  // {
-  //   path: 'dashboard',
-  //   component : DashboardComponent
-  // },
-  {
-    path: 'login',
-    component: LoginComponent,
-    // pathMatch: 'full',
-  },
-   {
-      path: 'dashboard',
-      redirectTo: 'dashboard',
-      pathMatch: 'full',
-   },
-   {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-    }]
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent},
+  { path: 'dashboard', component: AdminLayoutComponent,
+    children: [
+      { path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'}
+    ]
   },
 
+  //{ path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'},
+  {path:'**', component:PageNotFoundComponent}
   // {
-  //   path: 'login',
-  //   component : LoginComponent
-  //   // redirectTo: 'LoginComponent',
+  //   path: 'customers',
+  //   loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
   // },
-//   {
-//     path: 'dashboard',
-//     redirectTo: 'dashboard',
-//     pathMatch: 'full',
-//  },
-  // {
-  //   path: 'dashboard',
-  //   loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  // },
-  // {
-  //   path: '',
-  //   component: AdminLayoutComponent,
-  //   children: [{
-  //     path: '',
-  //     loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  //   }]
-  // }
 ];
 
 @NgModule({

@@ -40,9 +40,7 @@ export class ListUserComponent implements OnInit {
       console.log(error);
       this.app.toggleLoader();
       this.app.alert(false,error.error.message);
-      // if(error['status'] == 440 ){
-      //   this.router.navigate(['login']);
-      // }
+   
     });
   }
   deleteUser(id){

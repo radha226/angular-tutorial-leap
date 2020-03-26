@@ -38,6 +38,8 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import {MatDialogModule} from "@angular/material";
 import { ViewUserComponent } from './user/view-user/view-user.component';
 import { DeleteUserComponent } from './user/delete-user/delete-user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './auth/auth.guard';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -69,6 +71,7 @@ import { DeleteUserComponent } from './user/delete-user/delete-user.component';
     AdminLayoutComponent,
     LoadingScreenComponent,
     DeleteUserComponent,
+    PageNotFoundComponent,
    // ViewUserComponent,
     //AddUserComponent
     //DialogResultExampleDialog   
@@ -77,7 +80,7 @@ import { DeleteUserComponent } from './user/delete-user/delete-user.component';
     // EditUserComponent,
   ],
   entryComponents: [DeleteUserComponent],
-  providers: [CookieService],
+  providers: [CookieService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

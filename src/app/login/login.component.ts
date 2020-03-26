@@ -6,6 +6,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
+import { ApiServiceService } from '../services/api-service';
 // import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   cookieValue = 'UNKNOWN';
   loginform:FormGroup;
   loading:boolean=false;
-  constructor(private toastr: ToastrService,private cookie: CookieService,private router:Router,public http:HttpClient, public fb:FormBuilder,
+  errorMessage:string;
+  constructor(private toastr: ToastrService,private cookie: CookieService,private router:Router,public http:HttpClient, public fb:FormBuilder, private apiService:ApiServiceService,
     private app: AppComponent) {
     this.createLogin();
   }
@@ -49,21 +51,25 @@ export class LoginComponent implements OnInit {
     return new Promise((resolve,reject)=>{
       let headers= {
         "Content-type": "application/json; charset=UTF-8",
-        // 'Authorization': `Bearer ${this.cookie.get('token')}`
       }
       let data1 = {
       'email': data.email,
       'password': data.password,
       }
-      this.http.post('http://172.17.103.108:8000/api/v1/users/login', data1, {headers}).subscribe((result:any)=>{ 
-       
-         this.router.navigate(['dashboard']);
-        this.cookie.set( 'token', result.payload.token);
-        // console.log('token'+result.payload.token);
-      },error => {
-        this.app.alert(false,error.error.message)
+      var output=this.apiService.checkLogin(data.email, data.password);
+      if(output==true){
+        this.router.navigate(['dashboard']);
+      }else{
+        this.errorMessage="wrong credentials";
       }
-      );
+      // this.http.post('http://172.17.103.108:8000/api/v1/users/login', data1, {headers}).subscribe((result:any)=>{ 
+      //   // this.router.navigate(['dashboard']);
+      //   this.cookie.set( 'token', result.payload.token);
+      //   // console.log('token'+result.payload.token);
+      // },error => {
+      //   this.app.alert(false,error.error.message)
+      // }
+      // );
     });
   }
 
