@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { AppComponent } from '../../app.component';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-// import { DashboardComponent } from '../dashboard/dashboard.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
 import { ApiServiceService } from '../../services/api-service';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 // import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   loginform:FormGroup;
   loading:boolean=false;
   errorMessage:string;
-  constructor(private toastr: ToastrService,private cookie: CookieService,private router:Router,public http:HttpClient, public fb:FormBuilder, private apiService:ApiServiceService,
+  constructor(private dashobard:DashboardComponent, private toastr: ToastrService,private cookie: CookieService,private router:Router,public http:HttpClient, public fb:FormBuilder, private apiService:ApiServiceService,
     private app: AppComponent) {
     this.createLogin();
   }
@@ -76,9 +76,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.app.toggleLoader();
-    this.cookieValue=this.cookie.get('token');
-    if(this.cookieValue){
-      this.router.navigate(['dashboard']);
-    }
+    // this.cookieValue=this.cookie.get('token');
+    // if(this.cookieValue){
+    //   this.router.navigate(['dashboard']);
+    // }
   }
 }

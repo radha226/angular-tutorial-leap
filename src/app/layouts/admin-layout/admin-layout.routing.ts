@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
@@ -16,6 +15,7 @@ import { AddUserComponent } from '../../user/add-user/add-user.component';
 import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
 import { ViewUserComponent } from 'src/app/user/view-user/view-user.component';
 import { DeleteUserComponent } from 'src/app/user/delete-user/delete-user.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 export const AdminLayoutRoutes: Routes = [
     { path: '', component: DashboardComponent},  
     // { path: 'user-profile',   component: UserProfileComponent },

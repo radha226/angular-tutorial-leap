@@ -4,7 +4,6 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth/auth.guard';
 
@@ -16,13 +15,8 @@ const routes: Routes =[
       { path: '', canLoad:[AuthGuard], loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'}
     ]
   },
-
-  //{ path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'},
   {path:'**', component:PageNotFoundComponent}
-  // {
-  //   path: 'customers',
-  //   loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
-  // },
+
 ];
 
 @NgModule({

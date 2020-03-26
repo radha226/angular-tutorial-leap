@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
- import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
@@ -25,6 +24,7 @@ import { AddUserComponent } from '../../user/add-user/add-user.component';
 import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
 import { ViewUserComponent } from '../../user/view-user/view-user.component';
 import { DeleteUserComponent } from '../../user/delete-user/delete-user.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 @NgModule({
   imports: [
     CommonModule,
