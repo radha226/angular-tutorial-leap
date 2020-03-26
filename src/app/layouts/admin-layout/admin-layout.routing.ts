@@ -17,7 +17,7 @@ import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
 import { ViewUserComponent } from 'src/app/user/view-user/view-user.component';
 import { DeleteUserComponent } from 'src/app/user/delete-user/delete-user.component';
 export const AdminLayoutRoutes: Routes = [
-    { path: '',      component: DashboardComponent},  
+    { path: '', component: DashboardComponent},  
     // { path: 'user-profile',   component: UserProfileComponent },
     // {
     //     path: 'list-user',

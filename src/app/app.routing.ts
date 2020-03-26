@@ -11,9 +11,9 @@ import { AuthGuard } from './auth/auth.guard';
 const routes: Routes =[
   { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: AdminLayoutComponent,
+  { path: 'dashboard', component: AdminLayoutComponent, canActivate:[AuthGuard],
     children: [
-      { path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'}
+      { path: '', canLoad:[AuthGuard], loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'}
     ]
   },
 
@@ -29,10 +29,10 @@ const routes: Routes =[
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{ enableTracing: false })
-  //   RouterModule.forRoot(routes,{
-  //     useHash: true
-  //  })
+   // RouterModule.forRoot(routes,{ enableTracing: false })
+    RouterModule.forRoot(routes,{
+      useHash: true
+   })
   ],
   exports: [RouterModule],
 })
