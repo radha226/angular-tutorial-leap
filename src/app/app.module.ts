@@ -27,12 +27,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LogoutComponent } from './logout/logout.component';
-import { ListUserComponent } from './user/list-user/list-user.component';
+import { ListUserComponent } from './layouts/user/list-user/list-user.component';
 //import { AddUserComponent } from './user/add-user/add-user.component';
-import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { EditUserComponent } from './layouts/user/edit-user/edit-user.component';
 import {MatDialogModule} from "@angular/material";
-import { ViewUserComponent } from './user/view-user/view-user.component';
-import { DeleteUserComponent } from './user/delete-user/delete-user.component';
+import { ViewUserComponent } from './layouts/user/view-user/view-user.component';
+import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth/auth.guard';
 @NgModule({

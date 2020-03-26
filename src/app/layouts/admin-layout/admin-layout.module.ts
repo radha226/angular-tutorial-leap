@@ -14,11 +14,11 @@ import { GalleryComponent } from '../../gallery/gallery.component';
 import { CookieService } from 'ngx-cookie-service';
 import { LogoutComponent } from '../../logout/logout.component';
 import { MatButtonModule,MatRippleModule,MatFormFieldModule,MatInputModule,MatSelectModule,MatTooltipModule } from '@angular/material';
-import { ListUserComponent } from '../../user/list-user/list-user.component';
-import { AddUserComponent } from '../../user/add-user/add-user.component';
-import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
-import { ViewUserComponent } from '../../user/view-user/view-user.component';
-import { DeleteUserComponent } from '../../user/delete-user/delete-user.component';
+// import { ListUserComponent } from '../user/list-user/list-user.component';
+// import { AddUserComponent } from '../user/add-user/add-user.component';
+// import { EditUserComponent } from 'src/app/layouts/user/edit-user/edit-user.component';
+// import { ViewUserComponent } from '../user/view-user/view-user.component';
+// import { DeleteUserComponent } from '../user/delete-user/delete-user.component';
 //import { DashboardComponent } from '../dashboard/dashboard.component';
 @NgModule({
   imports: [
@@ -44,10 +44,10 @@ import { DeleteUserComponent } from '../../user/delete-user/delete-user.componen
     UpgradeComponent,
     GalleryComponent,
     LogoutComponent,
-    ListUserComponent,
-    AddUserComponent,
-    EditUserComponent,
-    ViewUserComponent,
+    // ListUserComponent,
+    // AddUserComponent,
+    // EditUserComponent,
+    // ViewUserComponent,
   ],
   exports: [
     MatButtonModule,

@@ -16,12 +16,16 @@ import { DeleteUserComponent } from '../delete-user/delete-user.component';
   styleUrls: ['./list-user.component.scss']
 })
 export class ListUserComponent implements OnInit {
-  users: any[];
+  users:any= [
+    {id:1,username:'tester1',role:'admin',batteryStatus:100},
+    {id:2,username:'tester2',role:'admin',batteryStatus:80},
+  ];
   
   constructor(private router: Router, private cookie: CookieService,
     private apiService: ApiServiceService, private app: AppComponent,private dialog: MatDialog) { }
 
   ngOnInit() {
+    console.log(this.users);
     console.log('ngonit');
     this.app.toggleLoader();
     console.log(this.cookie.get('token'));
@@ -30,18 +34,18 @@ export class ListUserComponent implements OnInit {
     //   return;
     // }
     console.log(this.cookie.get('token'));
-    this.apiService.apiRequest('api/v1/users','GET',this.cookie.get('token'),"").then(
-      (response:any) => {
-        console.log(response.users);
-        this.users=response.users;
-        this.app.toggleLoader();
+    // this.apiService.apiRequest('api/v1/users','GET',this.cookie.get('token'),"").then(
+    //   (response:any) => {
+    //     console.log(response.users);
+    //     this.users=response.users;
+    //     this.app.toggleLoader();
         
-    }).catch(error => {
-      console.log(error);
-      this.app.toggleLoader();
-      this.app.alert(false,error.error.message);
+    // }).catch(error => {
+    //   console.log(error);
+    //   this.app.toggleLoader();
+    //   this.app.alert(false,error.error.message);
    
-    });
+    // });
   }
   deleteUser(id){
     const dialogRef = this.dialog.open(DeleteUserComponent, {

@@ -8,21 +8,23 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { GalleryComponent } from '../../gallery/gallery.component';
-import { LoginComponent } from '../../login/login.component';
-import { LogoutComponent } from '../../logout/logout.component';
-import { ListUserComponent } from '../../user/list-user/list-user.component';
-import { AddUserComponent } from '../../user/add-user/add-user.component';
-import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
-import { ViewUserComponent } from 'src/app/user/view-user/view-user.component';
-import { DeleteUserComponent } from 'src/app/user/delete-user/delete-user.component';
+// import { LoginComponent } from '../../login/login.component';
+// import { LogoutComponent } from '../../logout/logout.component';
+// import { ListUserComponent } from '../user/list-user/list-user.component';
+// import { AddUserComponent } from '../user/add-user/add-user.component';
+// import { EditUserComponent } from 'src/app/layouts/user/edit-user/edit-user.component';
+// import { ViewUserComponent } from 'src/app/layouts/user/view-user/view-user.component';
+// import { DeleteUserComponent } from 'src/app/layouts/user/delete-user/delete-user.component';
 //import { DashboardComponent } from '../dashboard/dashboard.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
+import { UserModule } from '../user/user.module';
 //import { DashboardModule } from '../dashboard/dashboard.module';
 export const AdminLayoutRoutes: Routes = [
     {path:'',
      children:[
         { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
         { path: 'dashboard', loadChildren: () => DashboardModule },
+        { path: 'list-user', loadChildren: () => UserModule },
      ]
     }
 
