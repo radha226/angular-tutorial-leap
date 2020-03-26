@@ -17,8 +17,8 @@ import { DeleteUserComponent } from '../delete-user/delete-user.component';
 })
 export class ListUserComponent implements OnInit {
   users:any= [
-    {id:1,username:'tester1',role:'admin',batteryStatus:100},
-    {id:2,username:'tester2',role:'admin',batteryStatus:80},
+    {_id:1,username:'tester1',role:'admin',batteryStatus:100},
+    {_id:2,username:'tester2',role:'admin',batteryStatus:80},
   ];
   
   constructor(private router: Router, private cookie: CookieService,

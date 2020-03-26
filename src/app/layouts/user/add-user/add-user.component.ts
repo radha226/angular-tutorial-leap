@@ -39,7 +39,7 @@ export class AddUserComponent implements OnInit {
   //   @Inject(MAT_DIALOG_DATA) public data: DialogData)
   constructor( private router: Router,private apiService: ApiServiceService,private app: AppComponent,private formBuilder: FormBuilder,public http:HttpClient,private cookie: CookieService) {
     console.log('constructor');
-    this.checkValidationuser();
+    //this.checkValidationuser();
   }
   submit(data) {
     console.log(this.adduser);
@@ -84,21 +84,21 @@ export class AddUserComponent implements OnInit {
       });
     }
 
-    checkValidationuser(){
-      console.log('create login');
-     let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
-      let phoneNumber ="^((\\+91-?)|0)?[0-9]{10}$";
-      this.adduser = this.formBuilder.group({
-        id: [],
-        username: ['', Validators.required],
-        password: ['',[ Validators.required,Validators.maxLength(6)]],
-        email: ['', [ Validators.required,Validators.pattern(emailPattern)]],
-        mobile:['',[ Validators.required,Validators.maxLength(10),Validators.pattern(phoneNumber)]],
-        userMacAddress: [''],
-        routerMacAddress: [''],
-        roleType: ['', Validators.required],
-      });
-    }
+    // checkValidationuser(){
+    //   console.log('create login');
+    //  let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+    //   let phoneNumber ="^((\\+91-?)|0)?[0-9]{10}$";
+    //   this.adduser = this.formBuilder.group({
+    //     id: [],
+    //     username: ['', Validators.required],
+    //     password: ['',[ Validators.required,Validators.maxLength(6)]],
+    //     email: ['', [ Validators.required,Validators.pattern(emailPattern)]],
+    //     mobile:['',[ Validators.required,Validators.maxLength(10),Validators.pattern(phoneNumber)]],
+    //     userMacAddress: [''],
+    //     routerMacAddress: [''],
+    //     roleType: ['', Validators.required],
+    //   });
+    // }
     getRoleValidation = (value: any) =>{
       const dumpOption = this.adduser.get('roleType');
       const userMacAddress = this.adduser.get('userMacAddress');
