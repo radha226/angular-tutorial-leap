@@ -24,7 +24,7 @@ import { AddUserComponent } from '../../user/add-user/add-user.component';
 import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
 import { ViewUserComponent } from '../../user/view-user/view-user.component';
 import { DeleteUserComponent } from '../../user/delete-user/delete-user.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+//import { DashboardComponent } from '../dashboard/dashboard.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -39,7 +39,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
     MatTooltipModule,
   ],
   declarations: [
-   DashboardComponent,
+   //DashboardComponent,
     UserProfileComponent,
     TableListComponent,
     TypographyComponent,

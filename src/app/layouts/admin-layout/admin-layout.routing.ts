@@ -15,10 +15,20 @@ import { AddUserComponent } from '../../user/add-user/add-user.component';
 import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
 import { ViewUserComponent } from 'src/app/user/view-user/view-user.component';
 import { DeleteUserComponent } from 'src/app/user/delete-user/delete-user.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+//import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DashboardModule } from '../dashboard/dashboard.module';
+//import { DashboardModule } from '../dashboard/dashboard.module';
 export const AdminLayoutRoutes: Routes = [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
-    { path: 'dashboard', component: DashboardComponent},  
+    {path:'',
+     children:[
+        { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+       //{ path: 'dashboard', component: DashboardComponent},
+        { path: 'dashboard', loadChildren: () => DashboardModule },
+     ]
+    }
+
+
+    
     // { path: 'user-profile',   component: UserProfileComponent },
     // {
     //     path: 'list-user',
