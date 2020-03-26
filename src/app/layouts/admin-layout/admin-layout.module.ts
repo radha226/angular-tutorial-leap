@@ -13,12 +13,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { GalleryComponent } from '../../gallery/gallery.component';
 import { CookieService } from 'ngx-cookie-service';
 import { LogoutComponent } from '../../logout/logout.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatRippleModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule,MatRippleModule,MatFormFieldModule,MatInputModule,MatSelectModule,MatTooltipModule } from '@angular/material';
 import { ListUserComponent } from '../../user/list-user/list-user.component';
 import { AddUserComponent } from '../../user/add-user/add-user.component';
 import { EditUserComponent } from 'src/app/user/edit-user/edit-user.component';
@@ -54,6 +49,14 @@ import { DeleteUserComponent } from '../../user/delete-user/delete-user.componen
     EditUserComponent,
     ViewUserComponent,
   ],
+  exports: [
+    MatButtonModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTooltipModule,
+  ]
   // entryComponents: [DeleteUserComponent]
 })
 

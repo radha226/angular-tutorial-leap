@@ -22,7 +22,6 @@ export const AdminLayoutRoutes: Routes = [
     {path:'',
      children:[
         { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
-       //{ path: 'dashboard', component: DashboardComponent},
         { path: 'dashboard', loadChildren: () => DashboardModule },
      ]
     }
