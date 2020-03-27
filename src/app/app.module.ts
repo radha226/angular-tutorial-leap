@@ -18,7 +18,7 @@ import {AgmCoreModule} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { CookieService } from 'ngx-cookie-service';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './layouts/login/login.component';
 import { LoadingScreenComponent} from './loading-screen/loading-screen.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
@@ -34,7 +34,7 @@ import {MatDialogModule} from "@angular/material";
 import { ViewUserComponent } from './layouts/user/view-user/view-user.component';
 import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './layouts/auth/auth.guard';
 @NgModule({
   imports: [
     BrowserAnimationsModule,

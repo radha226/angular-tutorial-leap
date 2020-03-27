@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
-import { AppComponent } from '../app.component';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
-import { ApiServiceService } from '../services/api-service';
+import { AppComponent } from 'src/app/app.component';
+import { ApiServiceService } from 'src/app/services/api-service';
 // import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',

@@ -3,9 +3,9 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './layouts/login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './layouts/auth/auth.guard';
 
 const routes: Routes =[
   // { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
