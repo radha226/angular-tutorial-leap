@@ -2,7 +2,7 @@ import { Component, OnInit,Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {Router,ActivatedRoute} from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
 import { ApiServiceService } from 'src/app/services/api-service';
 import { AppComponent } from 'src/app/app.component';
@@ -37,9 +37,12 @@ export class AddUserComponent implements OnInit {
   ]
   // constructor( private formBuilder: FormBuilder,public dialogRef: MatDialogRef<AddUserComponent>,
   //   @Inject(MAT_DIALOG_DATA) public data: DialogData)
-  constructor( private router: Router,private apiService: ApiServiceService,private app: AppComponent,private formBuilder: FormBuilder,public http:HttpClient,private cookie: CookieService) {
+  constructor( private activatedRoute:ActivatedRoute,private router: Router,private apiService: ApiServiceService,private app: AppComponent,private formBuilder: FormBuilder,public http:HttpClient,private cookie: CookieService) {
     console.log('constructor');
     //this.checkValidationuser();
+  }
+  redirect(){
+    this.router.navigate(['../'], {relativeTo:this.activatedRoute});
   }
   submit(data) {
     console.log(this.adduser);

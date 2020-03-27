@@ -8,7 +8,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './layouts/auth/auth.guard';
 
 const routes: Routes =[
-  // { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: '', component: AdminLayoutComponent, canActivate:[AuthGuard],
     children: [

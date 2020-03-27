@@ -24,7 +24,9 @@ export class EditUserComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute,private router:Router,private apiService: ApiServiceService,private formBuilder: FormBuilder,public http:HttpClient,private cookie: CookieService) {
 
    }
-
+  redirect(){
+    this.router.navigate(['../..'], {relativeTo:this.activateRoute});
+  }
   submit(data) {
     console.log(this.editForm);
     if(!(data.valid)){

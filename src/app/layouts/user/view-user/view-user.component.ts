@@ -24,6 +24,9 @@ export class ViewUserComponent implements OnInit {
   ];
   constructor(private cookie: CookieService,private activateRoute: ActivatedRoute,private router: Router, private apiService: ApiServiceService, private app: AppComponent,private formBuilder: FormBuilder) { }
 
+  redirect(){
+    this.router.navigate(['../..'],{relativeTo:this.activateRoute})
+  }
   ngOnInit() {
     this.viewForm = this.formBuilder.group({
       username: ['', Validators.required],

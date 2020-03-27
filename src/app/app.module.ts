@@ -13,7 +13,8 @@ import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component'; import { ToastrModule } from 'ngx-toastr';
+import { UpgradeComponent } from './upgrade/upgrade.component';
+ import { ToastrModule } from 'ngx-toastr';
 import {AgmCoreModule} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -27,9 +28,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LogoutComponent } from './logout/logout.component';
-import { ListUserComponent } from './layouts/user/list-user/list-user.component';
-//import { AddUserComponent } from './user/add-user/add-user.component';
-import { EditUserComponent } from './layouts/user/edit-user/edit-user.component';
 import {MatDialogModule} from "@angular/material";
 import { ViewUserComponent } from './layouts/user/view-user/view-user.component';
 import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.component';
@@ -66,13 +64,7 @@ import { AuthGuard } from './layouts/auth/auth.guard';
     AdminLayoutComponent,
     LoadingScreenComponent,
     DeleteUserComponent,
-    PageNotFoundComponent,
-   // ViewUserComponent,
-    //AddUserComponent
-    //DialogResultExampleDialog   
-    // ListUserComponent,
-     //,
-    // EditUserComponent,
+    PageNotFoundComponent
   ],
   entryComponents: [DeleteUserComponent],
   providers: [CookieService,AuthGuard],

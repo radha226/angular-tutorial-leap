@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router,ActivatedRoute} from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
 import { ApiServiceService } from 'src/app/services/api-service';
 import { AppComponent } from 'src/app/app.component';
@@ -21,7 +21,7 @@ export class ListUserComponent implements OnInit {
     {_id:2,username:'tester2',role:'admin',batteryStatus:80},
   ];
   
-  constructor(private router: Router, private cookie: CookieService,
+  constructor(private activateRoute: ActivatedRoute,private router: Router, private cookie: CookieService,
     private apiService: ApiServiceService, private app: AppComponent,private dialog: MatDialog) { }
 
   ngOnInit() {
@@ -65,15 +65,18 @@ export class ListUserComponent implements OnInit {
   viewUser(id){
     console.log('view');
     console.log(id);
-    this.router.navigate(['list-user/view-user/'+id]);
+    //this.router.navigate(['list-user/view-user/'+id]);
+    this.router.navigate(['./view-user/',id], {relativeTo:this.activateRoute});
   }
   editUser(id){
     console.log(id);
-    this.router.navigate(['list-user/edit-user/'+id]);
+    // this.router.navigate(['list-user/edit-user/'+id]);
+    this.router.navigate(['./edit-user/',id],{relativeTo:this.activateRoute});
   };
   addUser() {
     console.log('add user clicked');
-    this.router.navigate(['list-user/add-user'])
+    this.router.navigate(['./add-user'], { relativeTo: this.activateRoute });
+   // this.router.navigate(['list-user/add-user'])
   };
 
 }
