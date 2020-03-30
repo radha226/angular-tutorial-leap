@@ -53,6 +53,7 @@ export class AddUserComponent implements OnInit {
     }else{  
      // this.app.toggleLoader();
       console.log(this.adduser.value);
+      this.router.navigate(['../'],{relativeTo:this.activatedRoute})
       // this.addUserFormSubmit(data.value).then((result:any)=>{
       //   console.log(result);
       // })

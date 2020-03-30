@@ -37,6 +37,7 @@ export class EditUserComponent implements OnInit {
       console.log('valid');
       // this.app.toggleLoader();
       console.log(this.editForm.value);
+      this.router.navigate(['../..'],{relativeTo:this.activateRoute});
       // this.loginFormSubmit(data.value).then((result:any)=>{
       //   console.log(result);
       // })

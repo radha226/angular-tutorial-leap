@@ -48,7 +48,8 @@ export class ViewUserComponent implements OnInit {
     })
   }
   viewCancel(){
-    this.router.navigate(['list-user']);
+   // this.router.navigate(['list-user']);
+    this.router.navigate(['../..'],{relativeTo:this.activateRoute})
   }
   showview(user){
     console.log(user);
@@ -58,6 +59,6 @@ export class ViewUserComponent implements OnInit {
         userMacAddress:user.userMacAddress,
         routerMacAddress:user.routerMacAddress,
          optionA:user.role
-        });
+    });
   }
 }
