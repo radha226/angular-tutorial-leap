@@ -36,12 +36,15 @@ export class ViewUserComponent implements OnInit {
       optionA: ['', Validators.required],
     });
     this.activateRoute.params.subscribe(params=>{
-      this.apiService.apiRequest('api/v1/users/'+params.id,'GET',this.cookie.get('token'),"").then( (response:any) => {
-        console.log(response.user);
-        this.showview(response.user);
-      }).catch(error => {
-        console.log(error);
-      });
+      let viewData= {_id:1,username:'tester1',email:'dd@gmail.com', userMacAddress:'99:66:44:46:22',
+      routerMacAddress:'44:DD:88:GG', role:'admin',batteryStatus:100}
+      this.showview(viewData);
+      // this.apiService.apiRequest('api/v1/users/'+params.id,'GET',this.cookie.get('token'),"").then( (response:any) => {
+      //   console.log(response.user);
+      //  this.showview(response.user);
+      // }).catch(error => {
+      //   console.log(error);
+      // });
     })
   }
   viewCancel(){

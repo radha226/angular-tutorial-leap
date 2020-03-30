@@ -4,7 +4,7 @@ import { ListUserComponent } from './list-user/list-user.component';
  import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
-
+import {SharedModule} from '../../shared/shared.module';
 const userRoutes: Routes = [
   {
     path: '',
@@ -20,7 +20,7 @@ const userRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(userRoutes)],
+  imports: [SharedModule,RouterModule.forChild(userRoutes)],
   exports: [RouterModule]
 })
 export class UserRoutingModule { }

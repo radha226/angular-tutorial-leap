@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
 import {ActivatedRoute} from "@angular/router";
+import {SharedModule} from '../../../shared/shared.module';
 interface Food {
   value: string;
   viewValue: string;
@@ -21,7 +22,7 @@ export class EditUserComponent implements OnInit {
     {value: 'Super Admin', viewValue: 'Super Admin'},
     {value: 'Agent', viewValue: 'Agent'},
   ];
-  constructor(private activateRoute: ActivatedRoute,private router:Router,private apiService: ApiServiceService,private formBuilder: FormBuilder,public http:HttpClient,private cookie: CookieService) {
+  constructor(private SharedModule:SharedModule,private activateRoute: ActivatedRoute,private router:Router,private apiService: ApiServiceService,private formBuilder: FormBuilder,public http:HttpClient,private cookie: CookieService) {
 
    }
   redirect(){
@@ -33,11 +34,12 @@ export class EditUserComponent implements OnInit {
       console.log('not valid');
       this.editForm;
     }else{  
+      console.log('valid');
       // this.app.toggleLoader();
       console.log(this.editForm.value);
-      this.loginFormSubmit(data.value).then((result:any)=>{
-        console.log(result);
-      })
+      // this.loginFormSubmit(data.value).then((result:any)=>{
+      //   console.log(result);
+      // })
     }
   }
   loginFormSubmit(data){
@@ -87,12 +89,16 @@ export class EditUserComponent implements OnInit {
        optionA: ['', Validators.required],
       });
       this.activateRoute.params.subscribe(params=>{
-        this.apiService.apiRequest('api/v1/users/'+this.EditId,'GET',this.cookie.get('token'),"").then( (response:any) => {
-          console.log(response.user);
-          this.showview(response.user);
-        }).catch(error => {
-          console.log(error);
-        });
+       
+        let viewData= {_id:1,username:'tester1',email:'dd@gmail.com', userMacAddress:'99:66:44:46:22',
+        routerMacAddress:'44:DD:88:GG', role:'Super Admin',batteryStatus:100};
+        this.showview(viewData);
+        // this.apiService.apiRequest('api/v1/users/'+this.EditId,'GET',this.cookie.get('token'),"").then( (response:any) => {
+        //   console.log(response.user);
+        //   this.showview(response.user);
+        // }).catch(error => {
+        //   console.log(error);
+        // });
       })
     })
     // let userId = window.localStorage.getItem("editUserId");

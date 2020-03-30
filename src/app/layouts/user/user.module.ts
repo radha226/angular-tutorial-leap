@@ -5,8 +5,7 @@ import { ListUserComponent } from './list-user/list-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
-
-import { MatButtonModule,MatRippleModule,MatFormFieldModule,MatInputModule,MatSelectModule,MatTooltipModule } from '@angular/material';
+import {SharedModule} from '../../shared/shared.module';
 @NgModule({
   declarations: [
     ListUserComponent,
@@ -17,12 +16,10 @@ import { MatButtonModule,MatRippleModule,MatFormFieldModule,MatInputModule,MatSe
   imports: [
     CommonModule,
     UserRoutingModule,
-    MatButtonModule,
-    MatRippleModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatTooltipModule,
+    SharedModule
+  ],
+  exports:[
+    
   ]
 })
 export class UserModule { }

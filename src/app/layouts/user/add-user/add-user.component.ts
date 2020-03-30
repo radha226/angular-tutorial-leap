@@ -7,12 +7,13 @@ import { CookieService } from 'ngx-cookie-service';
 import { ApiServiceService } from 'src/app/services/api-service';
 import { AppComponent } from 'src/app/app.component';
 import { UserInterface } from '../user-interface';
+ import {SharedModule} from '../../../shared/shared.module';
 //import {UserServicesService} from '../user-services.service'
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+// export interface DialogData {
+//   animal: string;
+//   name: string;
+// }
 // interface Food {
 //   value: string;
 //   viewValue: string;
@@ -23,10 +24,10 @@ export interface DialogData {
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent implements OnInit {
-  UserInterface
-  configForm:FormGroup;
+ // UserInterface
+ // configForm:FormGroup;
   adduser: FormGroup;
-  RoleStatus:boolean;
+   RoleStatus:boolean;
   // role: Food[] = [
   //   {value: 'Super Admin', viewValue: 'Super Admin'},
   //   {value: 'Agent', viewValue: 'Agent'},
@@ -39,7 +40,7 @@ export class AddUserComponent implements OnInit {
   //   @Inject(MAT_DIALOG_DATA) public data: DialogData)
   constructor( private activatedRoute:ActivatedRoute,private router: Router,private apiService: ApiServiceService,private app: AppComponent,private formBuilder: FormBuilder,public http:HttpClient,private cookie: CookieService) {
     console.log('constructor');
-    //this.checkValidationuser();
+   // this.checkValidationuser();
   }
   redirect(){
     this.router.navigate(['../'], {relativeTo:this.activatedRoute});
@@ -50,58 +51,58 @@ export class AddUserComponent implements OnInit {
       console.log('not valid');
       this.adduser;
     }else{  
-      this.app.toggleLoader();
+     // this.app.toggleLoader();
       console.log(this.adduser.value);
-      this.addUserFormSubmit(data.value).then((result:any)=>{
-        console.log(result);
-      })
+      // this.addUserFormSubmit(data.value).then((result:any)=>{
+      //   console.log(result);
+      // })
     }
     }
 
-    addUserFormSubmit(data){
-      return new Promise((resolve,reject)=>{
-        let headers= {
-          "Content-type": "application/json; charset=UTF-8",
-          'Authorization': `Bearer ${this.cookie.get('token')}`
-        }
-        let data1 = {
-        'username': data.username,
-        'email': data.email,
-        'password': data.password,
-        'mobileNumber':data.mobile,
-        'role': data.roleType,
-        'userMacAddress': data.userMacAddress,
-        'routerMacAddress': data.routerMacAddress,
-        }
-          this.apiService.apiRequest('api/v1/users','POST',this.cookie.get('token'),data1).then(
-            (response:any) => {
-              console.log(response.users);
-              this.app.toggleLoader();
-              this.router.navigate(['list-user'])
-          }).catch(error => {
-            console.log(error);
-            this.app.toggleLoader();
-            let ErrorMessage:any = JSON.stringify(error);
-            this.app.alert(false,ErrorMessage.message);
-          });  
-      });
-    }
-
-    // checkValidationuser(){
-    //   console.log('create login');
-    //  let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
-    //   let phoneNumber ="^((\\+91-?)|0)?[0-9]{10}$";
-    //   this.adduser = this.formBuilder.group({
-    //     id: [],
-    //     username: ['', Validators.required],
-    //     password: ['',[ Validators.required,Validators.maxLength(6)]],
-    //     email: ['', [ Validators.required,Validators.pattern(emailPattern)]],
-    //     mobile:['',[ Validators.required,Validators.maxLength(10),Validators.pattern(phoneNumber)]],
-    //     userMacAddress: [''],
-    //     routerMacAddress: [''],
-    //     roleType: ['', Validators.required],
+    // addUserFormSubmit(data){
+    //   return new Promise((resolve,reject)=>{
+    //     let headers= {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //       'Authorization': `Bearer ${this.cookie.get('token')}`
+    //     }
+    //     let data1 = {
+    //     'username': data.username,
+    //     'email': data.email,
+    //     'password': data.password,
+    //     'mobileNumber':data.mobile,
+    //     'role': data.roleType,
+    //     'userMacAddress': data.userMacAddress,
+    //     'routerMacAddress': data.routerMacAddress,
+    //     }
+    //       this.apiService.apiRequest('api/v1/users','POST',this.cookie.get('token'),data1).then(
+    //         (response:any) => {
+    //           console.log(response.users);
+    //           this.app.toggleLoader();
+    //           this.router.navigate(['list-user'])
+    //       }).catch(error => {
+    //         console.log(error);
+    //         this.app.toggleLoader();
+    //         let ErrorMessage:any = JSON.stringify(error);
+    //         this.app.alert(false,ErrorMessage.message);
+    //       });  
     //   });
     // }
+
+    checkValidationuser(){
+     console.log('validations');
+      let emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+      let phoneNumber ="^((\\+91-?)|0)?[0-9]{10}$";
+      this.adduser = this.formBuilder.group({
+        id: [],
+        username: ['', Validators.required],
+        password: ['',[ Validators.required,Validators.maxLength(6)]],
+        email: ['', [ Validators.required,Validators.pattern(emailPattern)]],
+        mobile:['',[ Validators.required,Validators.maxLength(10),Validators.pattern(phoneNumber)]],
+        userMacAddress: [''],
+        routerMacAddress: [''],
+       roleType: ['', Validators.required],
+      });
+    }
     getRoleValidation = (value: any) =>{
       const dumpOption = this.adduser.get('roleType');
       const userMacAddress = this.adduser.get('userMacAddress');
@@ -123,7 +124,7 @@ export class AddUserComponent implements OnInit {
       routerMacAddress.updateValueAndValidity();
     }
   ngOnInit() {
-    
+    this.checkValidationuser();
   }
 
 

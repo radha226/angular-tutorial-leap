@@ -23,14 +23,14 @@
                               <th>Actions</th>
                           </thead>
                           <tbody>
-                              <tr *ngFor="let user of users let rowIndex = index">
+                            <tr *ngFor="let user of users let rowIndex = index">
                                   <td>{{rowIndex+1}}</td>
                                   <td>{{user.username}}</td>
                                   <td>{{user.email}}</td>
                                   <td>{{user.role}}</td>
                                   <td>
                                       <span *ngIf="user.batteryStatus">{{user.batteryStatus}}%</span>
-                                    </td>
+                                  </td>
                                   <td class="td-actions">
                                    
                                     <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon" (click)="editUser(user._id)">
@@ -44,7 +44,7 @@
                                     </button>
                                 </td>
                                   
-                              </tr>
+                            </tr>
                             
                           </tbody>
                       </table>

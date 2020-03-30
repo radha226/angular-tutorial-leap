@@ -6,7 +6,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './layouts/login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './layouts/auth/auth.guard';
-
+import {SharedModule} from './shared/shared.module';
 const routes: Routes =[
   { path: 'login', component: LoginComponent},
   { path: '', component: AdminLayoutComponent, canActivate:[AuthGuard],
@@ -22,6 +22,7 @@ const routes: Routes =[
   imports: [
     CommonModule,
     BrowserModule,
+    SharedModule,
    // RouterModule.forRoot(routes,{ enableTracing: false })
     RouterModule.forRoot(routes,{
       useHash: true

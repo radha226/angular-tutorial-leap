@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { MatButtonModule,MatRippleModule,MatFormFieldModule,MatInputModule,MatSelectModule,MatTooltipModule } from '@angular/material';
+import {SharedModule} from '../../shared/shared.module';
 @NgModule({
   declarations: [
    DashboardComponent
@@ -10,12 +11,7 @@ import { MatButtonModule,MatRippleModule,MatFormFieldModule,MatInputModule,MatSe
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MatButtonModule,
-    MatRippleModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatTooltipModule,
+   SharedModule
   ]
 })
 export class DashboardModule { 
