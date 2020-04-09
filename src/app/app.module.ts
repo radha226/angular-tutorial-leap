@@ -18,6 +18,9 @@ import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.comp
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
+//import { AngularPracticeModule } from './layouts/angular-practice/angular-practice.module';
+
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -28,11 +31,10 @@ import {SharedModule} from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    //MatDialogModule,
     ToastrModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
   ],
  
   declarations: [
@@ -42,6 +44,8 @@ import {SharedModule} from './shared/shared.module';
     LoadingScreenComponent,
     DeleteUserComponent,
     PageNotFoundComponent,
+    //AngularPracticeModule,
+    
   ],
   entryComponents: [DeleteUserComponent],
   providers: [CookieService,AuthGuard],
