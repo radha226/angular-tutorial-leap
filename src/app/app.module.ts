@@ -14,7 +14,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { LoginComponent } from './layouts/login/login.component';
 import { LoadingScreenComponent} from './loading-screen/loading-screen.component';
 import { LogoutComponent } from './logout/logout.component';
-// import {MatDialogModule} from "@angular/material";
 import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './layouts/auth/auth.guard';
