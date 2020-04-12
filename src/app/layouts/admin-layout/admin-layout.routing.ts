@@ -5,7 +5,9 @@ import { AngularPracticeModule } from '../angular-practice/angular-practice/angu
 export const AdminLayoutRoutes: Routes = [
     {path:'',
      children:[
-        { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+        { path: '', redirectTo: 'dashboard',
+        //  pathMatch: 'prefix',
+          pathMatch: 'full' },
         { path: 'dashboard', loadChildren: () => DashboardModule },
         { path: 'list-user', loadChildren: () => UserModule },
         { path:'angular-practice',loadChildren:()=>AngularPracticeModule }

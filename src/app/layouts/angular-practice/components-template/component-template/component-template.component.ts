@@ -19,5 +19,8 @@ export class ComponentTemplateComponent implements OnInit {
   userInput(){
     this.router.navigate(['./user-input'],{relativeTo:this.activatedRoute});
   }
+  ComponentInteraction(){
+    this.router.navigate(['./component-interaction'],{relativeTo:this.activatedRoute});
+  }
 
 }

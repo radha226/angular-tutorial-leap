@@ -1,1 +1,83 @@
-<p>user-input works!</p>
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+          <h3>User Input</h3>
+            <div class="col-lg-12 col-md-12">  
+                <!-- <button mat-raised-button class="btn btn-success pull-right" (click)="addUser()">Add Users</button> -->
+              <div class="clearfix"></div></div>
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body table-responsive">
+                        <div class="clearfix">
+                            <h4>simple Event binding</h4>
+                            <button class="btn" (click)="clickMe1()">Without passing event</button>
+                            <br>
+                            {{this.clickMe1Title}}
+                        </div>
+                        <div class="clearfix">
+                            <h5>Event binding with $event</h5>
+                            <button class="btn" (click)="clickMe2($event)">With event</button>
+                            <br>
+                            {{this.clickMe2Title}}
+                        </div>
+
+                        <div class="clearfix">
+                            <h5>Keyup Event simple</h5>
+                            <input (keyup)="onkey1($event)"><br/>
+                            <h5>Keyup Event by a template refrence</h5>
+                            <input #name (keyup)="onkey2(name.value)">
+                        </div>
+                        
+                        <div class="clearfix">
+                            <h5>Keyup Enter Event simple</h5>
+                            <input type="text" (keyup.enter)="onkeyEnter1($event)"><br><br>
+                            <h5>Keyup Enter Event by a template refrence</h5>
+                            <input type="text" #name2 (keyup.enter)="onkeyEnter2(name2.value)">
+                            <h5>Keyup Enter Event by a click</h5>
+                            <input type="text" #name3>
+                            <input type="submit"   (click)="onkeyEnter3(name3.value)">
+                        </div>
+
+                        <div class="clearfix">
+                            <h3>Add a list item</h3>
+                            <input type="text" #data (keyup.enter)="onkeyEnter4(data.value)" (blur)="onkeyEnter3(data.value); data.value='' ">
+                            <ul>
+                                <li *ngFor="let hero of heros">{{hero}}</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+  <!-- sab se pehle constructor call hota h 
+
+2) ngonchanges => it works with argument
+ngonchanges(change:simpleChanges){
+
+}
+=>it works in parent child 
+=> argument is predefined argument
+=> it works when input value changes in parent and see it in child component of ngOnchanges then it called or works
+=> it gives previous and next value
+=>ngonchanges in one component => how it works
+=> first tym it gives undefines
+=> @input used in child
+3) then ngonit => jab hamara component intialize hota h dom mai
+
+4) ngDoCheck => jab bhi koi value ya content change hota h comoponent mai
+5) => ngAfterContentInit=> jab component ka content load hota h tab call hota h
+6) ngAfterContentChecked => jab bhi <ng content> mai change hota h tab load hota h
+  like jo v asi parent to send karde h
+
+7)ngAfterviewInit => jab bhi component ka view part initialize hoga tab call hota h
+8) ngAfterViewChecked => agar  view load hone ke baad kuch change ya execute karna ho tab eh call hota h
+9) ngDestroy=> destroy hone se pehle
+   -->

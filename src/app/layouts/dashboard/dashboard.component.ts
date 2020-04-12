@@ -9,9 +9,13 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 })
 export class DashboardComponent implements OnInit {
   cookieValue = 'UNKNOWN';
+  name = 'Angular';
+  ids: Array<String> = ['one', 'two', 'three', 'four']
   constructor(private router:Router,private cookie: CookieService) { 
 
   }
+
+  
   startAnimationForLineChart(chart){
       // let seq: any, delays: any, durations: any;
       // seq = 0;
