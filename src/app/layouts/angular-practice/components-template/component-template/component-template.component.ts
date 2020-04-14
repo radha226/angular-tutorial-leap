@@ -11,6 +11,7 @@ export class ComponentTemplateComponent implements OnInit {
   constructor(private router:Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+    
   }
   templateSyntax(){
     console.log('tempalte click');

@@ -1,1 +1,29 @@
-<p>component-child works!</p>
+
+
+<h2>Parent listens for child event</h2>
+<ul>
+    <li *ngFor ="let voters of voterChild as j">
+        <h4>{{voters}}</h4>
+        <button class="btn btn-success" (click)="vote(true)" [disabled]="false">Agree</button>
+        <button class="btn btn-danger" (click)="vote(false)" [disabled]="false">Disagree</button>
+    </li>
+</ul>
+
+
+<hr>
+<ul>
+    <li *ngFor="let hero of heroChild">
+        <h4>{{hero.name}} SAYS</h4>
+        <p>{{hero.name}}, I am your {{masterChild}}</p>
+    </li>
+</ul>
+<hr>
+<h2>intercept with @input setter and getter</h2>
+<h3>It has {{_name.length}} length</h3>
+<ul>
+    <li *ngFor ="let name of _name">
+    <h4>My name is {{name}}</h4>
+    </li>
+</ul>
+
+

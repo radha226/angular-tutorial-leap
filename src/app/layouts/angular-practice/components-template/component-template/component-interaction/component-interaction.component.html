@@ -1,1 +1,19 @@
-<p>component-interaction works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+          <h3>Components interaction</h3>
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body table-responsive">
+                        <!-- <p>component-interaction works!</p>
+                        <h4>the {{master}} has {{hero.length}} length</h4> -->
+                        <hr>
+                        <p>Agree: {{agree}}</p>
+                        <p>Disasgree : {{disagree}}</p>
+                        <app-component-child [voterChild]="voters" (voted)="onVoted($event)" [nameChild]="names" [heroChild]="hero" [masterChild]='master' ></app-component-child>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
