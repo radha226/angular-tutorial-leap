@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularPracticeComponent } from './angular-practice.component';
 //import { TemplateSyntaxComponent } from '../components-template/component-template/template-syntax/template-syntax.component';
 import { ComponentTemplateModule } from '../components-template/component-template/component-template.module';
+import { FormsModule } from '../forms/forms.module';
 const routes: Routes = [
   {
     path:'',
     children:[
       {path:'',component:AngularPracticeComponent},
       {path:'component-template',loadChildren: () => ComponentTemplateModule},
+      {path:'forms',loadChildren: () => FormsModule}
       //{path: 'component-template/template-syntax', component: TemplateSyntaxComponent}
     ]
   }

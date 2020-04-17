@@ -18,6 +18,7 @@ import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.comp
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
+
 //import { AngularPracticeModule } from './layouts/angular-practice/angular-practice.module';
 
 
@@ -43,9 +44,7 @@ import {SharedModule} from './shared/shared.module';
     AdminLayoutComponent,
     LoadingScreenComponent,
     DeleteUserComponent,
-    PageNotFoundComponent,
-    //AngularPracticeModule,
-    
+    PageNotFoundComponent
   ],
   entryComponents: [DeleteUserComponent],
   providers: [CookieService,AuthGuard],

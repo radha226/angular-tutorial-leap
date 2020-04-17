@@ -15,5 +15,9 @@ export class AngularPracticeComponent implements OnInit {
   componentsTemplate(){
     this.router.navigate(['./component-template'],{relativeTo:this.activatedRoute});
   }
+  componentsForm(){
+    // this.router.navigate(['./form'],{relativeTo:this.activatedRoute});
+    this.router.navigate(['./forms'],{relativeTo:this.activatedRoute});
+  }
 
 }
