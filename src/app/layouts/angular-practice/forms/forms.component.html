@@ -10,105 +10,127 @@
             <h4 class="card-title">Reactive Forms</h4>
           </div>
           <div class="card-body table-responsive">
-            <div class="row">
-              <div class="col-sm-6">
-                <label>First Name</label>
-                <input type="text" name="firstname" class="form-control">
-              </div>
-              <div class="col-sm-6">
-                <label>Email</label>
-                <input type="text" name="email" class="form-control">
-              </div>
-            </div>
+            <form [formGroup]="reactiveTest">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>First Name</label>
+                  <input type="text" name="firstname" class="form-control" formControlName="firstname">
+                  <div *ngIf="reactiveTest.controls.firstname.invalid && reactiveTest.controls.firstname.touched">
+                    <mat-error *ngIf="reactiveTest.controls.firstname.errors.required">
+                      <p>FirstName is required</p>
+                    </mat-error>
+                  </div>
 
-            <div class="row">
-              <div class="col-sm-12">
-                <!-- <select [(ngModel)]="model"> -->
-                <label id="example-radio-group-label">you are a person?</label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                 >
-                  <mat-radio-button class="example-radio-button" value="robort">Robort</mat-radio-button>
-                  <mat-radio-button class="example-radio-button" value="human">Human</mat-radio-button>
-                
-                </mat-radio-group>
+                </div>
+                <div class="col-sm-6">
+                  <label>Email</label>
+                  <input type="text" name="email" class="form-control" formControlName="email">
+                  <div *ngIf="reactiveTest.controls.email.invalid && reactiveTest.controls.email.touched">
+                    <mat-error *ngIf="reactiveTest.controls.email.errors.required">
+                      <p>Email is required</p>
+                    </mat-error>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-12">
-                <label id="example-radio-group-label">gender</label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                 >
-                  <!-- <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-                    {{season}}
-                  </mat-radio-button> -->
-                  <mat-radio-button class="example-radio-button" value="male">Male</mat-radio-button>
-                  <mat-radio-button class="example-radio-button" value="Female">female</mat-radio-button>
-                
-                </mat-radio-group>
-                <div>Your favorite season is: {{favoriteSeason}}</div>
-              </div>
-            </div>
-            <hr>
 
-            <div class="row">
-              <div class="col-sm-12">
-                <!-- <select [(ngModel)]="model">
-                  <option *ngFor="let item of list" [value]="item">{{item}}</option>
-                </select> -->
-                <label>Select your city</label>
-                <mat-select style="border: 1px solid #bdb9b9;">
-                  <mat-option>None</mat-option>
-                  <mat-option value="option1">Option 1</mat-option>
-                  <mat-option value="amritsar">amritsar</mat-option>
-                </mat-select>
-                
-              </div>
-              <div class="col-sm-12">
+              <div class="row">
                 <div class="col-sm-12">
-                  <label id="example-radio-group-label">Are you want to go harmandir shahib?</label>
+                  <label id="example-radio-group-label">you are a person?</label>
                   <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-                   >
-
-                    <mat-radio-button class="example-radio-button" value="yes">yes</mat-radio-button>
-                    <mat-radio-button class="example-radio-button" value="no">NO</mat-radio-button>
-                  
+                    formControlName="personType" (change)="getPersonType($event)">
+                    <mat-radio-button class="example-radio-button" *ngFor="let options of personTypeOptions"
+                      value="{{options?.type}}">{{options?.type}}</mat-radio-button>
                   </mat-radio-group>
-                  <!-- <div>Your favorite season is: {{favoriteSeason}}</div> -->
+                  <div *ngIf="reactiveTest.controls.personType.invalid && reactiveTest.controls.personType.touched">
+                    <mat-error *ngIf="reactiveTest.controls.personType.errors.required">
+                      <p>personType is required</p>
+                    </mat-error>
+                  </div>
+                </div>
+                <div class="col-sm-12" *ngIf="isGender">
+                  <label id="example-radio-group-label">
+                    <h3>Select Gender</h3>
+                  </label>
+                  <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    formControlName="gender">
+                    <mat-radio-button class="example-radio-button" *ngFor="let option of genderOptions"
+                      value="{{option?.gender}}">{{option?.gender}}</mat-radio-button>
+                  </mat-radio-group>
                 </div>
               </div>
-            </div>
-            <hr>
+              <hr>
 
-            <div class="row">
-              <div class="col-sm-12">
-                <label>Hobbies</label>
-                <section class="example-section">
-                  <mat-checkbox class="example-margin" value="cooking">Cooking</mat-checkbox>
-                  <mat-checkbox class="example-margin" value="dance">Dance</mat-checkbox>
-                </section>
-              </div>
-            </div>
-            <hr>
-
-            <div class="row">
-              <div class="col-sm-12">
-               
-                <h3>other Skills as alias</h3> <button class="bg bg-success">Add More Skills</button><br><br>
-
-                <div class="skills-row" style="border: 1px solid #bdb9b9; padding:20px; background:#fbf4f494">
-                  <h3>Skill name</h3>
-                  <input type="text" name="skill-name"><br>
-
-                  <h3>Experience</h3>
-                  <section class="example-section">
-                    <mat-checkbox class="example-margin" value="1">1 Year</mat-checkbox>
-                    <mat-checkbox class="example-margin" value="2">2 Year</mat-checkbox>
-                  </section>
-           
-                  <button class="bg bg-danger">Remove</button>
+              <div class="row">
+                <div class="col-sm-12">
+                  <label>Select your city</label>
+                  <mat-select style="border: 1px solid #bdb9b9;" formControlName="city"
+                    (selectionChange)="getCity($event)">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">Option 1</mat-option>
+                    <mat-option value="amritsar">amritsar</mat-option>
+                  </mat-select>
+                  <div *ngIf="reactiveTest.controls['city'].invalid && reactiveTest.controls['city'].touched">
+                  <mat-error *ngIf="reactiveTest.controls['city'].errors?.required">
+                   city is required, select atleast one value.
+                  </mat-error>
+                  </div>
+                </div>
+                <div class="col-sm-12" *ngIf="isVisited">
+                  <div class="col-sm-12">
+                    <label id="example-radio-group-label">Are you want to go harmandir shahib?</label>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                      formControlName="visit">
+                      <mat-radio-button class="example-radio-button" value="yes">yes</mat-radio-button>
+                      <mat-radio-button class="example-radio-button" value="no">NO</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
                 </div>
               </div>
-             
+              <hr>
 
-            </div>
+              <div class="row">
+                <div class="col-sm-12" formArrayName="checkArray">
+                  <label>Hobbies</label>
+                  <div *ngFor="let item of hobbiesOption; let i=index;">
+                    <section class="example-section">
+                      <mat-checkbox class="example-margin" [value]="item.type" (change)="onCheckboxChange($event)" [required]>
+                        {{item.type}}</mat-checkbox>
+                    </section>
+                  
+                  </div>
+                  <div *ngIf="reactiveTest.controls['checkArray'].length==0">
+                
+                    <mat-error *ngIf="reactiveTest.controls['checkArray'].errors?.required">
+                      checkArray is required, select atleast one value.
+                    </mat-error>
+                    </div>
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+
+                <div class="col-sm-12" formArrayName="skills">
+                  <h3> Other Skills</h3><br><br>
+                  <button class="bg bg-success" (click)="addSkills()">Add More Skills</button>
+                  <div class="skills-row"
+                    style="border: 1px solid #bdb9b9; padding:20px; margin-bottom:10px; background:#fbf4f494"
+                    *ngFor="let item of reactiveTest.get('skills').controls; let i=index;">
+                    <div [formGroupName]="i">
+                      <h3>Skill name</h3>
+                      <input type="text" formControlName="skillName"><br>
+                      <h3>Experiences</h3>
+                      <input type="text" formControlName="experience"><br>
+                      <button class="bg bg-danger" (click)="skillsRemove(i)">Remove</button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <button class="bg-success bg" (click)="formSubmit(reactiveTest)">Submit</button>
+            </form>
+
           </div>
         </div>
       </div>
