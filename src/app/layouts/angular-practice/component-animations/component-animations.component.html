@@ -1,0 +1,30 @@
+<div class="main-content">
+	<div class="container-fluid">
+		<div class="row">
+			<h3>Animation</h3>
+			<div class="col-lg-12 col-md-12">
+				<div class="card">
+					<div class="card-body table-responsive">
+						<h2 [@jackInTheBox]>bounce the text</h2>
+						<h4 [@fadeInLeft]>Fade In Left</h4>
+						<div [@slideLeft]=slideLeftState (click)="slideleft()" style="background:black; color:#fff; font-size:20px;text-align:center;">click Me to slide left</div>
+						<h3>Click in the ballon to chane size</h3>
+						<div [@ballonSizeChange]=ballonBefore (click)="changeBallonSize()"></div>
+						<h3>Change the div size</h3>
+						<button (click)="changeState()">Change Size</button>
+						<br />
+						<div [@changeDivSize]=currentState>i m here</div>
+						<br />
+						<h5>To DO List</h5>
+						<input type="text"  #add (keyup.enter)="addList(add.value)"><br>
+						<ul>
+							<li *ngFor="let list of todoList let i=index" [@slidingEffect]> {{list}}
+									<span (click)="deleteTodo(i)" class="delete-icon">[X]</span>
+							</li>
+						</ul> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
