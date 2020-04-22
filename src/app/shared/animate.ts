@@ -1,5 +1,4 @@
-import {
-	animation, trigger, animateChild, group, transition, animate, style, query, state, keyframes
+import {animation, trigger, animateChild, group, transition, animate, style, query, state, keyframes
 } from '@angular/animations';
 
 // first void
