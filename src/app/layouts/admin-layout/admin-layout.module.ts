@@ -32,6 +32,7 @@ import {SharedModule} from '../../shared/shared.module';
     UpgradeComponent,
     GalleryComponent,
     LogoutComponent,
+    
   ],
   exports: [
   ]

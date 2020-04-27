@@ -94,6 +94,34 @@
                 <p>Angular</p>
             </a>
         </li>
+        <!-- <li routerLinkActive="active" class="nav-item nav-item dropdown">
+            <a class="nav-link" routerLink="/rxjs-component" class="nav-link dropdown-toggle" id="navbarDropdown">
+                <i class="material-icons">Rxjs</i>
+                <p>Rxjs</p>
+            </a> 
+       
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+        </li> -->
+
+        <li  routerLinkActive="active" class="nav-item dropdown active show">
+            <a class="nav-link dropdown-toggle"  routerLink="/rxjs-component" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Rxjs
+            </a>
+            <div class="dropdown-menu show" aria-labelledby="navbarDropdown">
+              <li routerLinkActive="active" class="nav-item">
+                  <a class="dropdown-item"  routerLink="/rxjs-component/promise-component">promise-component</a>
+              </li>
+              <li routerLinkActive="active" class="nav-item">
+              <a class="dropdown-item" routerLink="/rxjs-component/observable-component">observable-component</a>
+            </li>
+            
+            </div>
+          </li>
 
         <!-- <li routerLinkActive="active" class="nav-item dropdown">
             <a class="nav-link" routerLink="/list-user">
