@@ -19,8 +19,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
-//import { AngularPracticeModule } from './layouts/angular-practice/angular-practice.module';
-
 
 @NgModule({
   imports: [
@@ -45,7 +43,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AdminLayoutComponent,
     LoadingScreenComponent,
     DeleteUserComponent,
-    PageNotFoundComponent,
+    PageNotFoundComponent
   ],
   entryComponents: [DeleteUserComponent],
   providers: [CookieService,AuthGuard],

@@ -22,5 +22,8 @@ export class AngularPracticeComponent implements OnInit {
   componentAnimation(){
     this.router.navigate(['./animation'], {relativeTo:this.activatedRoute});
   }
+  javascriptLogic(){
+    this.router.navigate(['./javascript-logic'], {relativeTo:this.activatedRoute});
+  }
 
 }

@@ -5,6 +5,7 @@ import { AngularPracticeComponent } from './angular-practice.component';
 import { ComponentTemplateModule } from '../components-template/component-template/component-template.module';
 import { FormsModule } from '../forms/forms.module';
 import { ComponentAnimationsComponent } from '../component-animations/component-animations.component';
+import { JavascriptLogicModule } from '../javascript-logic/javascript-logic.module';
 const routes: Routes = [
   {
     path:'',
@@ -12,8 +13,8 @@ const routes: Routes = [
       {path:'',component:AngularPracticeComponent},
       {path:'component-template',loadChildren: () => ComponentTemplateModule},
       {path:'forms',loadChildren: () => FormsModule},
-      {path:'animation', component:ComponentAnimationsComponent}
-    
+      {path:'animation', component:ComponentAnimationsComponent},
+      {path:'javascript-logic', loadChildren:()=>JavascriptLogicModule}
     ]
   }
  
