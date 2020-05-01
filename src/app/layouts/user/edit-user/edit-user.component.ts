@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from 'src/app/services/api-service';
 import { HttpClient } from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
 import {ActivatedRoute} from "@angular/router";
 import {SharedModule} from '../../../shared/shared.module';
+import { ApiServiceService } from 'src/app/shared/services/api-service';
 interface Food {
   value: string;
   viewValue: string;

@@ -5,6 +5,7 @@ import { RxjsComponentsComponent } from './rxjs-components.component';
 import { ObservableComponentModule } from './observable-component/observable-component.module';
 
 
+
 const routes: Routes = [
   { 
     path:'', component: RxjsComponentsComponent,

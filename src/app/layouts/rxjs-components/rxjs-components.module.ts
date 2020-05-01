@@ -7,7 +7,7 @@ import { RxjsComponentsComponent } from './rxjs-components.component';
   declarations: [PromiseComponentComponent,RxjsComponentsComponent],
   imports: [
     CommonModule,
-    RxjsComponentsRoutingModule
+    RxjsComponentsRoutingModule,
   ]
 })
 export class RxjsComponentsModule { }

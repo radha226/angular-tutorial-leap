@@ -6,13 +6,13 @@ import { ToFromComponent } from './to-from/to-from.component';
 import { TimerIntervalComponent } from './timer-interval/timer-interval.component';
 import { FromEventComponent } from './from-event/from-event.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
-
-
+import { MapFilterComponent } from './map-filter/map-filter.component';
+import { TakeComponent } from './take/take.component';
 @NgModule({
-  declarations: [ObservableComponentComponent, ToFromComponent, TimerIntervalComponent, FromEventComponent, SwitchMapComponent],
+  declarations: [ObservableComponentComponent, ToFromComponent, TimerIntervalComponent, FromEventComponent, SwitchMapComponent, MapFilterComponent, TakeComponent],
   imports: [
     CommonModule,
-    ObservableComponentRoutingModule
+    ObservableComponentRoutingModule,
   ]
 })
 export class ObservableComponentModule { }

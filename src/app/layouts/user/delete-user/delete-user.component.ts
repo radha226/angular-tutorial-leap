@@ -1,8 +1,8 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { ApiServiceService } from 'src/app/services/api-service';
 import { AppComponent } from 'src/app/app.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ApiServiceService } from 'src/app/shared/services/api-service';
 @Component({
   selector: 'app-delete-user',
   templateUrl: './delete-user.component.html',

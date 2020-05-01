@@ -4,10 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router,ActivatedRoute} from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
-import { ApiServiceService } from 'src/app/services/api-service';
+
 import { AppComponent } from 'src/app/app.component';
 import { UserInterface } from '../user-interface';
  import {SharedModule} from '../../../shared/shared.module';
+import { ApiServiceService } from 'src/app/shared/services/api-service';
 //import {UserServicesService} from '../user-services.service'
 
 // export interface DialogData {

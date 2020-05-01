@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from './Student';
 import { Observable } from 'rxjs';
+import { RxjsServiceService } from '../rxjs-service.service';
+
 
 @Component({
   selector: 'app-observable-component',
@@ -29,7 +31,7 @@ export class ObservableComponentComponent implements OnInit {
     college: 'VVP Engineering College',
     university: 'GTU'
 }];
-  constructor() { }
+  constructor(private data:RxjsServiceService) { }
 
   ngOnInit() {
     this.getObservable().subscribe((observer:any)=>{

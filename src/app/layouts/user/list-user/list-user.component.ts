@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {Router,ActivatedRoute} from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
-import { ApiServiceService } from 'src/app/services/api-service';
+
 import { AppComponent } from 'src/app/app.component';
 //import {MatDialog, MatDialogConfig} from "@angular/material";
 import { AddUserComponent } from '../add-user/add-user.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ThrowStmt } from '@angular/compiler';
 import { DeleteUserComponent } from '../delete-user/delete-user.component';
+import { ApiServiceService } from 'src/app/shared/services/api-service';
 // import { AppComponent } from '../app.component';
 
 @Component({

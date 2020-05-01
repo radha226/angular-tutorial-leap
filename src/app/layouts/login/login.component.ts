@@ -5,7 +5,9 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
 import { AppComponent } from 'src/app/app.component';
-import { ApiServiceService } from 'src/app/services/api-service';
+import { ApiServiceService } from 'src/app/shared/services/api-service';
+
+
 // import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
