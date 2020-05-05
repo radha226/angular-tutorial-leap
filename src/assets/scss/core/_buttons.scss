@@ -48,10 +48,6 @@
   // btn-raised
   &.btn-raised,
   .btn-group-raised & {
-    // baseline shadow
-    // @include box-shadow($bmd-shadow-2dp);
-
-    // reverse any of the above for links
     &.btn-link {
       box-shadow: none;
       @include bmd-hover-focus-active() {

@@ -1,33 +1,18 @@
 <div class="logo">
-    <a href="https://www.creative-tim.com" class="simple-text">
+    <a href="/" class="simple-text">
         <div class="logo-img">
             <img src="/assets/img/angular2-logo-red.png"/>
         </div>
         Creative Tim
     </a>
 </div>
+
+    
+ 
 <div class="sidebar-wrapper">
-  <div >
-    <!-- <form class="navbar-form">
-      <span class="bmd-form-group">
-        <div class="input-group no-border">
-          <input type="text" value="" class="form-control" placeholder="Search...">
-          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
-            <i class="material-icons">search</i>
-            <div class="ripple-container"></div>
-          </button>
-        </div>
-      </span>
-    </form> -->
+  <div>
     <ul class="nav navbar-nav nav-mobile-menu">
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
-                <i class="material-icons">dashboard</i>
-                <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                </p>
-            </a>
-        </li>
+       
         <!-- <li class="nav-item dropdown"  >
             <a class="nav-link"  id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">list-user</i>
@@ -41,7 +26,7 @@
             </div>
         </li> -->
         
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
             <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">notifications</i>
                 <span class="notification">5</span>
@@ -56,15 +41,8 @@
                 <a class="dropdown-item" href="#">Another Notification</a>
                 <a class="dropdown-item" href="#">Another One</a>
             </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
-                <i class="material-icons">person</i>
-                <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                </p>
-            </a>
-        </li>
+        </li> -->
+      
     </ul>
   </div>
     <ul class="nav">
@@ -74,6 +52,42 @@
                 <p>{{menuItem.title}}</p>
             </a>
         </li> -->
+
+        <!-- <div class="user">
+            <div class="photo">
+              <img src="../../assets/img/faces/avatar.jpg" />
+            </div>
+            <div class="user-info">
+              <a data-toggle="collapse" href="#collapseExample" class="username">
+                <span>
+                  Tania Andrew
+                  <b class="caret"></b>
+                </span>
+              </a>
+              <div class="collapse" id="collapseExample">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="sidebar-mini"> MP </span>
+                      <span class="sidebar-normal"> My Profile </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="sidebar-mini"> EP </span>
+                      <span class="sidebar-normal"> Edit Profile </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span class="sidebar-mini"> S </span>
+                      <span class="sidebar-normal"> Settings </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
         
         <li routerLinkActive="active" class="nav-item">
             <a class="nav-link" routerLink="/dashboard">
@@ -84,10 +98,83 @@
         <li routerLinkActive="active" class="nav-item">
             <a class="nav-link" routerLink="/list-user">
                 <i class="material-icons">list-user</i>
-                <p>list-user</p>
+                <p>list-users</p>
             </a>
         </li>
+        <!-- <li class="nav-item ">
+            <a class="nav-link" data-toggle="collapse" href="#componentsExamples">
+              <i class="material-icons">apps</i>
+              <p> Components
+                <b class="caret"></b>
+              </p>
+            </a>
+            <div class="collapse" id="componentsExamples">
+              <ul class="nav">
+                <li class="nav-item ">
+                  <a class="nav-link" data-toggle="collapse" href="#componentsCollapse">
+                    <span class="sidebar-mini"> MLT </span>
+                    <span class="sidebar-normal"> Multi Level Collapse
+                      <b class="caret"></b>
+                    </span>
+                  </a>
+                  <div class="collapse" id="componentsCollapse">
+                    <ul class="nav">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="#0">
+                          <span class="sidebar-mini"> E </span>
+                          <span class="sidebar-normal"> Example </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="../../examples/components/buttons.html">
+                    <span class="sidebar-mini"> B </span>
+                    <span class="sidebar-normal"> Buttons </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li> -->
 
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" data-toggle="collapse" href="#rxjsExample">
+              <i class="material-icons">content_paste</i>
+              <p> rxjsExample
+                <b class="caret"></b>
+              </p>
+            </a>
+            <div class="collapse" routerLinkActive="show" id="rxjsExample">
+              <ul class="nav">
+                <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" routerLink="/rxjs-component/promise-component">
+                    <span class="sidebar-mini"> RF </span>
+                    <span class="sidebar-normal"> promise-component </span>
+                  </a>
+                </li>
+                <li class="nav-item"  routerLinkActive="active">
+                    <a class="nav-link" data-toggle="collapse" href="#observableExample">
+                      <span class="sidebar-mini"> MLT </span>
+                      <span class="sidebar-normal"> observable
+                        <b class="caret"></b>
+                      </span>
+                    </a>
+                    <div class="collapse" routerLinkActive="show" id="observableExample">
+                      <ul class="nav">
+                        <li class="nav-item"  routerLinkActive="active">
+                          <a class="nav-link" routerLink="/rxjs-component/observable-component">
+                            <span class="sidebar-mini"> E </span>
+                            <span class="sidebar-normal"> list observable </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                </li>
+              </ul>
+            </div>
+          </li>
         <li routerLinkActive="active" class="nav-item">
             <a class="nav-link" routerLink="/angular-practice">
                 <i class="material-icons">list-user</i>
@@ -108,20 +195,7 @@
                 </div>
         </li> -->
 
-        <li  routerLinkActive="active" class="nav-item dropdown show">
-            <a class="nav-link dropdown-toggle"  routerLink="/rxjs-component" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Rxjs
-            </a>
-            <div class="dropdown-menu show" aria-labelledby="navbarDropdown">
-              <li routerLinkActive="active" class="nav-item">
-                  <a class="dropdown-item"  routerLink="/rxjs-component/promise-component">promise-component</a>
-              </li>
-              <li routerLinkActive="active" class="nav-item">
-              <a class="dropdown-item" routerLink="/rxjs-component/observable-component">observable-component</a>
-            </li>
-            
-            </div>
-          </li>
+        
 
         <!-- <li routerLinkActive="active" class="nav-item dropdown">
             <a class="nav-link" routerLink="/list-user">

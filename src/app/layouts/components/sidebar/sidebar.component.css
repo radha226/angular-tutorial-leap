@@ -1,0 +1,4 @@
+.btn-group.bootstrap-select.open .caret, .dropdown.open .caret, .dropup.open .caret, a[aria-expanded=true] .caret, a[data-toggle=collapse][aria-expanded=true] .caret {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    transform: rotate(180deg);
+}
