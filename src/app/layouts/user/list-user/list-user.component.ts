@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router,ActivatedRoute} from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
-
 import { AppComponent } from 'src/app/app.component';
 //import {MatDialog, MatDialogConfig} from "@angular/material";
 import { AddUserComponent } from '../add-user/add-user.component';

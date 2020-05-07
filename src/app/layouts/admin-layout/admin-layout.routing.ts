@@ -3,6 +3,7 @@ import { DashboardModule } from '../dashboard/dashboard.module';
 import { UserModule } from '../user/user.module';
 import { AngularPracticeModule } from '../angular-practice/angular-practice/angular-practice.module';
 import { RxjsComponentsModule } from '../rxjs-components/rxjs-components.module';
+import { ShoppingListModule } from '../shopping/shopping-list.module';
 export const AdminLayoutRoutes: Routes = [
     {path:'',
      children:[
@@ -12,7 +13,8 @@ export const AdminLayoutRoutes: Routes = [
         { path: 'dashboard', loadChildren: () => DashboardModule },
         { path: 'list-user', loadChildren: () => UserModule },
         { path:'angular-practice',loadChildren:()=>AngularPracticeModule },
-        {path:'rxjs-component',  loadChildren:()=>RxjsComponentsModule}
+        {path:'rxjs-component',  loadChildren:()=>RxjsComponentsModule},
+        {path:'shopping',  loadChildren:()=>ShoppingListModule}
      ]
     }
 ];

@@ -14,19 +14,21 @@ export class ApiServiceService {
   public apiRequest(URL: any, method: any, token: any, payload: any) {
     let headers: any;
     this.API_URL = `http://172.17.103.108:8000`;
+     this.API_URL = ``;
     console.log(token);
     if (token)
       headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,  'Access-Control-Allow-Origin': '*'
       });
     else
       headers = new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       });
     if (method === "GET") {
       return new Promise((resolve, reject) => {
-        this.httpClient.get(`${this.API_URL}/${URL}`, { headers })
+        this.httpClient.get(`${URL}`, { headers })
           .subscribe(response => {
             resolve(response);
           },
