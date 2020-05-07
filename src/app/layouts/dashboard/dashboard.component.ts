@@ -74,12 +74,12 @@ export class DashboardComponent implements OnInit {
       // seq2 = 0;
   };
   ngOnInit() {
-    this.spinner.show();
+    // this.spinner.show();
  
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 3000);
+    // setTimeout(() => {
+    //   /** spinner ends after 5 seconds */
+    //   this.spinner.hide();
+    // }, 3000);
       console.log('dashboard');
     this.cookieValue=this.cookie.get('token');
     if(this.cookieValue){

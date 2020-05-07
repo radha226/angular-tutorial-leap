@@ -1,1 +1,49 @@
-<p>shopping-detail works!</p>
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-beat"
+[fullScreen] = "true"
+>
+<p style="font-size: 20px; color: white">Please Wait.</p>
+</ngx-spinner>
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+              <p>
+                <button mat-stroked-button color="warn"
+                    matBadge="0" matBadgePosition="before" matBadgeColor="accent">
+                  Cart
+                </button>
+              </p>
+              
+             
+            <div class="col col-lg-12 col-md-12 col-sm-12" *ngIf="produceDetail">  
+                <mat-card class="example-card" >
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title>{{produceDetail?.title}}</mat-card-title>
+                    </mat-card-header>
+                    <img src="{{produceDetail.thumbnailUrl}}" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <p>
+                        {{produceDetail?.longDescription}}
+                      </p>
+                      <p>Status <strong>{{produceDetail.status}}</strong></p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-flat-button color="warn">Add To Cart</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button mat-flat-button color="warn">Buy Now</button>
+                    </mat-card-actions>
+                  </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -7,7 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatDialogModule,MatRadioModule,MatCheckboxModule} from "@angular/material";
+import {MatDialogModule,MatRadioModule,MatCheckboxModule, MatListModule, MatCardModule, MatBadgeModule} from "@angular/material";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
@@ -25,6 +25,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ReactiveFormsModule,
     MatRadioModule, MatCheckboxModule,
     NgxSpinnerModule,
+    MatListModule,MatCardModule,MatBadgeModule
   ],
   exports:[
     MatButtonModule,
@@ -37,6 +38,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ReactiveFormsModule,
     MatRadioModule, MatCheckboxModule,
     NgxSpinnerModule,
+    MatListModule,MatCardModule,MatBadgeModule
   ]
 })
 export class SharedModule {
