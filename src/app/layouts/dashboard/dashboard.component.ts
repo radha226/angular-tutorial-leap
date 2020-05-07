@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import { CookieService } from 'ngx-cookie-service';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
   cookieValue = 'UNKNOWN';
   name = 'Angular';
   ids: Array<String> = ['one', 'two', 'three', 'four']
-  constructor(private router:Router,private cookie: CookieService) { 
+  constructor(private spinner: NgxSpinnerService,private router:Router,private cookie: CookieService) { 
 
   }
 
@@ -73,6 +74,12 @@ export class DashboardComponent implements OnInit {
       // seq2 = 0;
   };
   ngOnInit() {
+    this.spinner.show();
+ 
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 3000);
       console.log('dashboard');
     this.cookieValue=this.cookie.get('token');
     if(this.cookieValue){

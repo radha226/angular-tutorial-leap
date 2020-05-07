@@ -8,6 +8,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { ThrowStmt } from '@angular/compiler';
 import { DeleteUserComponent } from '../delete-user/delete-user.component';
 import { ApiServiceService } from 'src/app/shared/services/api-service';
+import { NgxSpinnerService } from 'ngx-spinner';
 // import { AppComponent } from '../app.component';
 
 @Component({
@@ -21,13 +22,17 @@ export class ListUserComponent implements OnInit {
     {_id:2,username:'tester2',role:'admin',batteryStatus:80},
   ];
   
-  constructor(private activateRoute: ActivatedRoute,private router: Router, private cookie: CookieService,
+  constructor(private spinner: NgxSpinnerService,private activateRoute: ActivatedRoute,private router: Router, private cookie: CookieService,
     private apiService: ApiServiceService, private app: AppComponent,private dialog: MatDialog) { }
 
   ngOnInit() {
-    console.log(this.users);
-    console.log('ngonit');
-    this.app.toggleLoader();
+    this.spinner.show();
+ 
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 4000);
+    //this.app.toggleLoader();
     console.log(this.cookie.get('token'));
     // if(!this.cookie.get('token')) {
     //   this.router.navigate(['login']);

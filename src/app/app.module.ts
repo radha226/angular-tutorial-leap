@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -19,7 +19,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   imports: [
     BrowserModule,
@@ -32,10 +32,13 @@ import { BrowserModule } from '@angular/platform-browser';
     HttpClientModule,
     SharedModule,
     ToastrModule.forRoot(),
+    NgxSpinnerModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
+   
   ],
+  
  
   declarations: [
     AppComponent,

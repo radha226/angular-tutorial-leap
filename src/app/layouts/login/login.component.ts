@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
 import { AppComponent } from 'src/app/app.component';
 import { ApiServiceService } from 'src/app/shared/services/api-service';
-
+import { NgxSpinnerService } from 'ngx-spinner';
 
 // import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   loginform:FormGroup;
   loading:boolean=false;
   errorMessage:string;
-  constructor(private toastr: ToastrService,private cookie: CookieService,private router:Router,public http:HttpClient, public fb:FormBuilder, private apiService:ApiServiceService,
+  constructor(private spinner: NgxSpinnerService,private toastr: ToastrService,private cookie: CookieService,private router:Router,public http:HttpClient, public fb:FormBuilder, private apiService:ApiServiceService,
     private app: AppComponent) {
     this.createLogin();
   }
@@ -75,6 +75,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.spinner.show();
+ 
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 8000);
     this.app.toggleLoader();
     this.cookieValue=this.cookie.get('token');
     if(this.cookieValue){
