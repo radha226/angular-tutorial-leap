@@ -13,13 +13,12 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { CookieService } from 'ngx-cookie-service';
 import { LoginComponent } from './layouts/login/login.component';
 import { LoadingScreenComponent} from './loading-screen/loading-screen.component';
-import { LogoutComponent } from './logout/logout.component';
 import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 @NgModule({
   imports: [
     BrowserModule,

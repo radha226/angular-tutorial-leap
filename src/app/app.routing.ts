@@ -4,9 +4,10 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './layouts/login/login.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',

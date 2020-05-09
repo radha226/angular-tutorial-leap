@@ -75,12 +75,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.spinner.show();
+    // this.spinner.show();
  
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 8000);
+    // setTimeout(() => {
+    
+    //   this.spinner.hide();
+    // }, 8000);
     this.app.toggleLoader();
     this.cookieValue=this.cookie.get('token');
     if(this.cookieValue){
