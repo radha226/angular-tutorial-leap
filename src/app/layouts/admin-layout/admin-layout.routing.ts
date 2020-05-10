@@ -9,7 +9,6 @@ export const AdminLayoutRoutes: Routes = [
     {path:'',
      children:[
         { path: '', redirectTo: 'dashboard',
-        //  pathMatch: 'prefix',
           pathMatch: 'full' },
         { path: 'dashboard', loadChildren: () => DashboardModule },
         { path: 'list-user', loadChildren: () => UserModule },

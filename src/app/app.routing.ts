@@ -4,7 +4,6 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './layouts/login/login.component';
-
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
@@ -16,7 +15,7 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes =[
-  { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent, canLoad:[AuthGuard]},
   { path: '', component: AdminLayoutComponent, canActivate:[AuthGuard],
     children: [
       { path: '', canLoad:[AuthGuard], loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'}

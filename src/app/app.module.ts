@@ -5,14 +5,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing';
-
 import { AppComponent } from './app.component';
  import { ToastrModule } from 'ngx-toastr';
 import {AgmCoreModule} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginComponent } from './layouts/login/login.component';
-
 import { DeleteUserComponent } from './layouts/user/delete-user/delete-user.component';
 import { AuthGuard } from './layouts/auth/auth.guard';
 import {SharedModule} from './shared/shared.module';
