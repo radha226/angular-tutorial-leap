@@ -17,7 +17,7 @@ type="ball-beat"
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
           </mat-form-field>
           <br>
-            <div class="col col-lg-4 col-md-4 col-sm-12" *ngFor="let product of dataSource.filteredData">  
+            <div class="col col-lg-4 col-md-4 col-sm-12" *ngFor="let product of dataSource | async ">  
                 <a [routerLink]="['./productDetail/id', product._id]">   <!-- without query parms-->
             <!-- <a [routerLink]="['./productDetail'] "  [queryParams]="{id: product._id}">   with query parms -->
                 
@@ -38,6 +38,10 @@ type="ball-beat"
                   </mat-card>
                 </a>
             </div>
+            <!-- <mat-paginator [length]="71"
+            (page)="pageChangeEvent($event)"
+            [pageSizeOptions]="[5, 10, 25, 71]">
+</mat-paginator> -->
         </div>
     </div>
 </div>

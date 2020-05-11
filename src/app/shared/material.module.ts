@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatDialogModule,MatRadioModule,MatCheckboxModule, MatListModule, MatCardModule, MatBadgeModule} from "@angular/material";
+import {MatDialogModule,MatRadioModule,MatCheckboxModule, MatListModule, MatCardModule, MatBadgeModule, MatPaginatorModule} from "@angular/material";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     ReactiveFormsModule,
     MatRadioModule, MatCheckboxModule,
-    MatListModule,MatCardModule,MatBadgeModule
+    MatListModule,MatCardModule,MatBadgeModule,MatPaginatorModule
   ],
   exports:[
     MatButtonModule,
@@ -34,7 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     ReactiveFormsModule,
     MatRadioModule, MatCheckboxModule,
-    MatListModule,MatCardModule,MatBadgeModule
+    MatListModule,MatCardModule,MatBadgeModule,MatPaginatorModule
   ]
 })
 export class MaterialModule { }
