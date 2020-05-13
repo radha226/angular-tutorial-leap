@@ -6,6 +6,8 @@ import { TimerIntervalComponent } from './timer-interval/timer-interval.componen
 import { FromEventComponent } from './from-event/from-event.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { MapFilterComponent } from './map-filter/map-filter.component';
+import { ToArrayComponent } from './to-array/to-array.component';
+import { TakeComponent } from './take/take.component';
 const routes: Routes = [
   {
     path: '',
@@ -15,7 +17,9 @@ const routes: Routes = [
       { path: 'timer_interval', component: TimerIntervalComponent },
       { path: 'fromEvent', component: FromEventComponent },
       { path: 'switchMap', component: SwitchMapComponent },
-      { path: 'map_filter', component: MapFilterComponent }
+      { path: 'map_filter', component: MapFilterComponent },
+      { path: 'toArray', component: ToArrayComponent },
+      {path:'take', component: TakeComponent },
     ]
   }
 ];

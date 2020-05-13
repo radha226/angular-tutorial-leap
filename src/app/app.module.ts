@@ -19,6 +19,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { PageNotFoundComponent } from './featuredModule/page-not-found/page-not-found.component';
 import { LoadingScreenComponent } from './shared/components/loading-screen/loading-screen.component';
 import { ComponentsModule } from './blockModule/components/components.module';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -38,7 +39,7 @@ import { ComponentsModule } from './blockModule/components/components.module';
    
   ],
   
- 
+
   declarations: [
     AppComponent,
     LoginComponent,

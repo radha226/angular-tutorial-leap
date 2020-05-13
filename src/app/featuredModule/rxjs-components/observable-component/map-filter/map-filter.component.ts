@@ -13,26 +13,11 @@ export class MapFilterComponent implements OnInit {
 
   ngOnInit() {
     console.log('ngonit');
-    // this.getMapData().subscribe((x)=>{
-    //   console.log(x);
-    // })
-
-
-    ///take operator example
-    //take()  => value in argument, return till that no of value by source observable
-    // let data=[1,2,3,4];
-    // let obs=of(1,2,3,4,5,6,7,8,9).pipe(
-    //   take(19)
-    // );
-    // obs.subscribe((val)=>{
-    //   console.log(val);
-    // })
-
-
-
+    this.getMapData().subscribe((x)=>{
+      console.log(x);
+    })
 
     //cancat operator examples
-
     //Concatenates multiple Observables together by sequentially emitting their values, one Observable after the other.
     let obs=of(1,2,3,4,5,6,7,8,9).pipe(
       take(19)
