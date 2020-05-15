@@ -16,6 +16,4 @@ import {SharedModule} from '../../shared/shared.module';
   
   ]
 })
-export class DashboardModule { 
-  
-}
+export class DashboardModule {}

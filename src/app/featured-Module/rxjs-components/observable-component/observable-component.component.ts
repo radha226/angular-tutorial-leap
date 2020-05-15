@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from './Student';
 import { Observable, of } from 'rxjs';
 import { RxjsServiceService } from '../rxjs-service.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -31,14 +32,9 @@ export class ObservableComponentComponent implements OnInit {
     college: 'VVP Engineering College',
     university: 'GTU'
   }];
-  constructor(private data: RxjsServiceService) { }
+  constructor(private data: RxjsServiceService,private http:HttpClient) { }
   varObservable1: Observable<any>;
   ngOnInit() {
-
-    function isObservable(v) {
-      return 'object' === typeof v && 'function' === typeof v.observable
-    }
-
 
     //creating observable with new observable instance
     this.getObservablewWithNewInstance().subscribe((observer: any) => {
@@ -54,7 +50,8 @@ export class ObservableComponentComponent implements OnInit {
 
     // create observable with return function as a observable
     this.getObservableWithReturnFunctionAsObservable().subscribe((observer: any) => {
-      console.log('return function ' + observer);
+      console.log( JSON.stringify(observer));
+      error=>console.log(error);
     })
 
     // creat observable wtih making a variable as a observable
@@ -79,6 +76,7 @@ export class ObservableComponentComponent implements OnInit {
 
   getObservableWithCreateObservable() {
     //creating observable with create
+    // it is also called custom observable
     return Observable.create((observer: any) => {
       observer.next('data emit');
     })
@@ -87,12 +85,14 @@ export class ObservableComponentComponent implements OnInit {
 
   getObservableWithReturnFunctionAsObservable(): Observable<any> {
     //return observable as function 
-    return of('data emit as a function return');
+    return this.http.get('https://jsonplaceholder.typicode.com/users');
+    //return of('data emit as a function return');
   }
 
   variableAsObservable() {
     // with variable observable
-    return this.varObservable1 = of('hello everyone with observable as variable');
+    //return this.varObservable1 = of('hello everyone with observable as variable');
+    return  this.varObservable1= this.http.get('https://jsonplaceholder.typicode.com/users');
   }
 
 }
