@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule, ExtraOptions, PreloadAllModules } from '@angular/router';
-import { AdminLayoutComponent } from './featured-module/admin-layout/admin-layout.component';
+
+import {SharedModule} from './shared/shared.module';
+
+import { AdminLayoutModule } from './featured-module/admin-layout/admin-layout.module';
 import { LoginComponent } from './featured-module/login/login.component';
 import { AuthGuard } from './featured-module/auth/auth.guard';
-import {SharedModule} from './shared/shared.module';
+import { AdminLayoutComponent } from './featured-module/admin-layout/admin-layout.component';
 import { PageNotFoundComponent } from './featured-module/page-not-found/page-not-found.component';
-import { AdminLayoutModule } from './featured-Module/admin-layout/admin-layout.module';
+
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',

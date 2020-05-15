@@ -8,17 +8,20 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
  import { ToastrModule } from 'ngx-toastr';
 import {AgmCoreModule} from '@agm/core';
-import { AdminLayoutComponent } from './featured-module/admin-layout/admin-layout.component';
+
 import { CookieService } from 'ngx-cookie-service';
-import { LoginComponent } from './featured-module/login/login.component';
-import { DeleteUserComponent } from './featured-module/user/delete-user/delete-user.component';
-import { AuthGuard } from './featured-module/auth/auth.guard';
+
 import {SharedModule} from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { PageNotFoundComponent } from './featured-module/page-not-found/page-not-found.component';
+
 import { LoadingScreenComponent } from './shared/components/loading-screen/loading-screen.component';
 import { ComponentsModule } from './common/components/components.module';
+import { LoginComponent } from './featured-module/login/login.component';
+import { AdminLayoutComponent } from './featured-module/admin-layout/admin-layout.component';
+import { DeleteUserComponent } from './featured-module/user/delete-user/delete-user.component';
+import { PageNotFoundComponent } from './featured-module/page-not-found/page-not-found.component';
+import { AuthGuard } from './featured-module/auth/auth.guard';
 
 @NgModule({
   imports: [
